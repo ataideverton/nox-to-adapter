@@ -1,0 +1,6 @@
+{
+  "admin.nox-adapter-integration": {
+    "component": "Configuration",
+    "path": "/admin/app/nox-adapter-configuration"
+  }
+}

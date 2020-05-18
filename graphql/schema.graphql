@@ -1,0 +1,7 @@
+type Query {
+  postSettings(settings: Settings): Boolean
+}
+
+input Settings {
+  lastCustomerId: String
+}

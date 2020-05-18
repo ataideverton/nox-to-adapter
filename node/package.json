@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@vtex/api": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "8.x",
+    "@vtex/api": "^3.0.0",
+    "typescript": "3.8.3",
+    "vtex.nox-adapter-configuration": "https://noxdevelop--c2v01.myvtex.com/_v/private/typings/linked/v1/vtex.nox-adapter-configuration@0.0.2+build1589824068/public/@types/vtex.nox-adapter-configuration",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.118.0/public/@types/vtex.styleguide"
+  }
+}

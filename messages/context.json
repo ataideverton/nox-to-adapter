@@ -1,0 +1,9 @@
+{
+  "nox-adapter-configuration.navigation.label": "Configure NOX-Adapter Integration",
+  "admin/nox-adapter-configuration-title": "Configuration",
+  "admin/nox-adapter-configuration-subtitle": "Configure interactions between NOX ERP and Ciashop Adapter",
+  "admin/nox-adapter-configuration-last-customer-id": "Last Customer Id on the Ciashop platform",
+  "admin/nox-adapter-configuration-save": "Save",
+  "admin/b2b-cnae.layout.configuration-success": "Success",
+  "admin/b2b-cnae.layout.configuration-failure": "Failure"
+}
