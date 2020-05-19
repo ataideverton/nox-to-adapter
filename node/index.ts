@@ -1,7 +1,8 @@
-import { ClientsConfig, LRUCache, Service, ServiceContext } from '@vtex/api'
+import { ClientsConfig, LRUCache, Service, ServiceContext, method } from '@vtex/api'
 
 import { Clients } from './clients'
 import { queries } from './resolvers/configuration'
+import { newCustomerId } from './middlewares/customer'
 
 const TIMEOUT_MS = 5000
 
@@ -35,4 +36,9 @@ export default new Service<Clients>({
       },
     },
   },
+  routes: {
+    newCustomerId: method({
+      POST: newCustomerId
+    })
+  }
 })

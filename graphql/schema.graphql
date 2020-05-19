@@ -1,7 +1,17 @@
 type Query {
-  postSettings(settings: Settings): Boolean
+  postSettings(settings: Settings): SaveResult
+  getSettings:SettingsResponse
 }
 
 input Settings {
   lastCustomerId: String
+}
+
+type SettingsResponse {
+  lastCustomerId: String
+}
+
+
+type SaveResult {
+  status: Boolean
 }
