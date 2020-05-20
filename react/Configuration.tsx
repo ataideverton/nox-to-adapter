@@ -1,6 +1,6 @@
 import { promises } from 'fs'
-import { useQuery, useApolloClient } from 'react-apollo'
 
+import { useQuery, useApolloClient } from 'react-apollo'
 import { FormattedMessage } from 'react-intl'
 import React, { FC, useState, useEffect } from 'react'
 import {
@@ -13,35 +13,40 @@ import {
   ToastProvider,
 } from 'vtex.styleguide'
 
-
 import getSettings from './queries/getSettings.gql'
 import postSettings from './queries/postSettings.gql'
-
 
 const Configuration: FC = () => {
   const { data } = useQuery(getSettings)
   const client = useApolloClient()
   const [settings, setSettings] = useState<Settings>({
-    lastCustomerId: ''
+    lastCustomerId: '',
   })
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    return client.query({
-      query: postSettings,
-      variables: {
-        settings,
-      },
-    }).then((result: any) => {
-      if (result.data.postSettings.status) {
-        return { message: (<FormattedMessage id="admin/b2b-cnae.layout.configuration-success" />) }
-      }
-      return {
-        message: (<FormattedMessage id="admin/b2b-cnae.layout.configuration-failure" />)
-      }
-    })
+    return client
+      .query({
+        query: postSettings,
+        variables: {
+          settings,
+        },
+      })
+      .then((result: any) => {
+        if (result.data.postSettings.status) {
+          return {
+            message: (
+              <FormattedMessage id="admin/b2b-cnae.layout.configuration-success" />
+            ),
+          }
+        }
+        return {
+          message: (
+            <FormattedMessage id="admin/b2b-cnae.layout.configuration-failure" />
+          ),
+        }
+      })
   }
-
 
   useEffect(() => {
     if (data) {
@@ -57,30 +62,33 @@ const Configuration: FC = () => {
     <ToastProvider>
       <Layout>
         <PageHeader
-          title={
-            <FormattedMessage id="admin/nox-adapter-configuration-title" />
-          }
-          subtitle={
-            <FormattedMessage id="admin/nox-adapter-configuration-subtitle" />
-          }
+          title={<FormattedMessage id="admin/nox-to-adapter-title" />}
+          subtitle={<FormattedMessage id="admin/nox-to-adapter-subtitle" />}
         />
         <PageBlock variation="full">
           <ToastConsumer>
             {({ showToast }: { showToast: any }) => (
-              <form onSubmit={(e) => handleSubmit(e).then((result: any) => showToast(result))}>
+              <form
+                onSubmit={(e) =>
+                  handleSubmit(e).then((result: any) => showToast(result))
+                }
+              >
                 <div className="mb5">
                   <Input
                     label={
-                      <FormattedMessage id="admin/nox-adapter-configuration-last-customer-id" />
+                      <FormattedMessage id="admin/nox-to-adapter-last-customer-id" />
                     }
                     value={settings.lastCustomerId}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      setSettings({ ...settings, lastCustomerId: e.target.value })
+                      setSettings({
+                        ...settings,
+                        lastCustomerId: e.target.value,
+                      })
                     }}
                   ></Input>
                 </div>
                 <Button type="submit">
-                  <FormattedMessage id="admin/nox-adapter-configuration-save" />
+                  <FormattedMessage id="admin/nox-to-adapter-save" />
                 </Button>
               </form>
             )}

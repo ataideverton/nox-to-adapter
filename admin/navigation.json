@@ -1,5 +1,5 @@
 {
   "section": "customer",
-  "titleId": "nox-adapter-configuration.navigation.label",
-  "path": "/admin/nox-adapter-configuration"
+  "titleId": "nox-to-adapter.navigation.label",
+  "path": "/admin/nox-to-adapter"
 }
