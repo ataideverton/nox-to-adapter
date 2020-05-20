@@ -1540,10 +1540,6 @@ uuid@^3.1.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-"vtex.nox-to-adapter@https://noxdevelop--c2v01.myvtex.com/_v/private/typings/linked/v1/vtex.nox-to-adapter@0.0.2+build1589943146/public/@types/vtex.nox-to-adapter":
-  version "0.0.2"
-  resolved "https://noxdevelop--c2v01.myvtex.com/_v/private/typings/linked/v1/vtex.nox-to-adapter@0.0.2+build1589943146/public/@types/vtex.nox-to-adapter#f018010d5320726573afbfe0e0a667ec5c3c23bc"
-
 "vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.118.0/public/@types/vtex.styleguide":
   version "9.118.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.118.0/public/@types/vtex.styleguide#40cbd9c99e0cd8477d32aafe243d39c0dfadeb42"
