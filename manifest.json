@@ -14,6 +14,19 @@
     },
     {
       "name": "update-app-settings"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.vtex.com",
+        "path": "/{{account}}/dataentities/*"
+      }
+    },
+    {
+      "name": "POWER_USER_DS"
+    },
+    {
+      "name": "Get_Account_By_Identifier"
     }
   ],
   "dependencies": {
