@@ -25,26 +25,18 @@ export async function newCustomerId(ctx: Context, next: () => Promise<any>) {
 
   ctx.status = 200
 
-  const customerId = generateId(Math.ceil(parseInt(lastCustomerId, 10)))
-
-  const bodyToPatch = { ...body, customerId }
-  try {
-    await masterdata.updateDocument(bodyToPatch)
-  } catch (error) {
-    if (
-      error.response.data.Message ===
-      'duplicate entry at indice: CL-AlternateKeyCustomerId'
-    ) {
-      try {
-        await masterdata.updateDocument({
-          ...bodyToPatch,
-          customerId: generateId(Math.ceil(parseInt(lastCustomerId, 10))),
-        })
-      } catch (innerError) {
-        throw new UserInputError(`Cannot update registry: ${body}`)
-      }
+  var bodyToPatch = { ...body, customerId: generateId(Math.ceil(parseInt(lastCustomerId, 10))) }
+  
+  masterdata.updateDocument(bodyToPatch).catch((error:any) => {      
+    if (error.response.data.Message ===  'duplicate entry at indice: CL-AlternateKeyCustomerId')
+    {      
+      bodyToPatch = {...bodyToPatch, customerId:generateId(Math.ceil(parseInt(lastCustomerId, 10)))}     
+      masterdata.updateDocument(bodyToPatch).catch(() => {throw new UserInputError(`Cannot update registry: ${body}`)})
     }
-  }
+    else{
+      throw new UserInputError(`Cannot update registry: ${body}`)
+    }    
+  }) 
 
   ctx.body = bodyToPatch
 

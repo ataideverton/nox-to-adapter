@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios'
 import { AuthenticationError, ForbiddenError, UserInputError } from '@vtex/api'
 
-export function statusToError(e: any) {
+export function statusToError(e: any) {    
     if (!e.response) {
         throw e
     }

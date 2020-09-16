@@ -28,8 +28,7 @@ export class MasterData extends ExternalClient {
     ) => this.patch('CL/documents', fields)
 
 
-    protected patch = <T>(url: string, data?: any) => {
-        return this.http.patch<T>(url, data).catch(statusToError)
-    }
+    protected patch = <T>(url: string, data?: any) => 
+        this.http.patch<T>(url, data).catch<any>(statusToError)
 
 }
