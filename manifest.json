@@ -1,7 +1,7 @@
 {
   "name": "nox-to-adapter",
   "vendor": "vtex",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "title": "NOX To Ciashop-Adapter Configuration",
   "description": "",
   "mustUpdateAt": "2022-08-28",
