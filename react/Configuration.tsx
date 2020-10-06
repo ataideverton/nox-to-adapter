@@ -91,7 +91,7 @@ const Configuration: FC = () => {
                 <div className="mb5">
                   <Input
                     label={
-                      <FormattedMessage id="admin/nox-to-adapter-last-customer-id" />
+                      <FormattedMessage id="admin/nox-to-adapter-max-customer-id" />
                     }
                     value={settings.maxCustomerId}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
