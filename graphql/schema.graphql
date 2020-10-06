@@ -1,16 +1,17 @@
 type Query {
   postSettings(settings: Settings): SaveResult
-  getSettings:SettingsResponse
+  getSettings: SettingsResponse
 }
 
 input Settings {
   lastCustomerId: String
+  maxCustomerId: String
 }
 
 type SettingsResponse {
   lastCustomerId: String
+  maxCustomerId: String
 }
-
 
 type SaveResult {
   status: Boolean

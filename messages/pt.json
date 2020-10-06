@@ -3,6 +3,7 @@
   "admin/nox-to-adapter-title": "Configurações",
   "admin/nox-to-adapter-subtitle": "Configuração para as interações entre NOX ERP e o Ciashop Adapter",
   "admin/nox-to-adapter-last-customer-id": "Ultimo Id de Comprador na plataforma Ciashop",
+  "admin/nox-to-adapter-max-customer-id": "Valor máximo que pode ser gerado para um Id",
   "admin/nox-to-adapter-save": "Salvar",
   "admin/b2b-cnae.layout.configuration-success": "Sucesso",
   "admin/b2b-cnae.layout.configuration-failure": "Falha"

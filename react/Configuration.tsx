@@ -21,6 +21,7 @@ const Configuration: FC = () => {
   const client = useApolloClient()
   const [settings, setSettings] = useState<Settings>({
     lastCustomerId: '',
+    maxCustomerId: ''
   })
 
   const handleSubmit = (e: any) => {
@@ -87,6 +88,20 @@ const Configuration: FC = () => {
                     }}
                   ></Input>
                 </div>
+                <div className="mb5">
+                  <Input
+                    label={
+                      <FormattedMessage id="admin/nox-to-adapter-last-customer-id" />
+                    }
+                    value={settings.maxCustomerId}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      setSettings({
+                        ...settings,
+                        maxCustomerId: e.target.value,
+                      })
+                    }}
+                  ></Input>
+                </div>
                 <Button type="submit">
                   <FormattedMessage id="admin/nox-to-adapter-save" />
                 </Button>
@@ -103,4 +118,5 @@ export default Configuration
 
 export interface Settings {
   lastCustomerId: string
+  maxCustomerId: string
 }

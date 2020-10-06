@@ -48,6 +48,11 @@
         "type": "string",
         "title": "Id of the last ciashop customer",
         "description": "Numeric Id generated for the last recorded customer on database"
+      },
+      "maxCustomerId": {
+        "type": "string",
+        "title": "Maximum value for customerId",
+        "description": "Maximum value to generated id"
       }
     }
   },
